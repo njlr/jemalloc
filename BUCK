@@ -26,7 +26,7 @@ genrule(
     'include/**/*.sh',
     'test/**/*.in',
   ]),
-  cmd = 'cp -r $SRCDIR $OUT && cd $OUT && ./autogen.sh && ./configure',
+  cmd = 'cp -r $SRCDIR $OUT && cd $OUT && chmod +x ./autogen.sh && ./autogen.sh && chmod +x ./configure && ./configure',
 )
 
 def extract(rule, subpath):
