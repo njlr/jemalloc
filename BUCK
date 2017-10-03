@@ -37,8 +37,8 @@ genrule(
     'chmod +x ./include/jemalloc/internal/public_namespace.sh && ' +
     'chmod +x ./include/jemalloc/internal/public_unnamespace.sh && ' +
     'chmod +x ./include/jemalloc/internal/size_classes.sh && ' +
-    'chmod +x ./configure && ' +
     './autogen.sh && ' +
+    'chmod +x ./configure && ' +
     './configure',
 )
 
