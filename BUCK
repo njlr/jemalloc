@@ -26,7 +26,17 @@ genrule(
     'include/**/*.sh',
     'test/**/*.in',
   ]),
-  cmd = 'cp -r $SRCDIR $OUT && cd $OUT && chmod +x ./autogen.sh && ./autogen.sh && chmod +x ./configure && ./configure',
+  cmd = 'cp -r $SRCDIR $OUT && ' +
+    'cd $OUT && ' +
+    'chmod +x ./autogen.sh && ' +
+    './autogen.sh && ' +
+    'chmod +x ./include/jemalloc/jemalloc.sh && ' +
+    'chmod +x ./include/jemalloc/jemalloc_mangle.sh && ' +
+    'chmod +x ./include/jemalloc/jemalloc_rename.sh && ' +
+    'chmod +x ./include/jemalloc/internal/private_namespace.sh && ' +
+    'chmod +x ./include/jemalloc/internal/size_classes.sh && ' +
+    'chmod +x ./configure && ' +
+    './configure',
 )
 
 def extract(rule, subpath):
