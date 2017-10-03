@@ -29,13 +29,16 @@ genrule(
   cmd = 'cp -r $SRCDIR $OUT && ' +
     'cd $OUT && ' +
     'chmod +x ./autogen.sh && ' +
-    './autogen.sh && ' +
     'chmod +x ./include/jemalloc/jemalloc.sh && ' +
     'chmod +x ./include/jemalloc/jemalloc_mangle.sh && ' +
     'chmod +x ./include/jemalloc/jemalloc_rename.sh && ' +
+    'chmod +x ./include/jemalloc/internal/private_symbols.sh && ' +
     'chmod +x ./include/jemalloc/internal/private_namespace.sh && ' +
+    'chmod +x ./include/jemalloc/internal/public_namespace.sh && ' +
+    'chmod +x ./include/jemalloc/internal/public_unnamespace.sh && ' +
     'chmod +x ./include/jemalloc/internal/size_classes.sh && ' +
     'chmod +x ./configure && ' +
+    './autogen.sh && ' +
     './configure',
 )
 
